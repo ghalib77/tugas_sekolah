@@ -19,10 +19,10 @@ class BiodataFactory extends Factory
         return [
            "nama"=>$this->faker->name(),
            "kelas_id"=>mt_rand(1,3),
-           "NIS"=>$this->faker->unique()->numerify("#########"),
-           "no_absen"=>mt_rand(1,30),
+           "NIS"=>$this->faker->unique()->numerify("########"),
            "tanggal_lahir"=>$this->faker->date(),
-           "tempat_lahir"=>$this->faker->word(5)
+           "tempat_lahir"=>$this->faker->word(5),
+           "email"=>$this->faker->unique()->email
         ];
     }
 }
