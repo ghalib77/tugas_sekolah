@@ -9,7 +9,8 @@
 
 ## How to use ?
 
--   Pull the main branch.
+-   Pull the master branch.
 -   run <b>composer install</b>.
+-   copy the .env.example to .env file.
 -   after composer install, run php artisan migrate and php artisan db:seed
 -   run php artisan serve.
