@@ -15,12 +15,12 @@ class CreateBiodataTable extends Migration
     {
         Schema::create('biodata', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kelas_id')->onDelete("cascade");
+            $table->foreignId('kelas_id')->onDelete("cascade")->onUpdate('cascade');
             $table->string("nama");
-            $table->integer("NIS")->unique();
-            $table->integer("no_absen");
+            $table->string("NIS")->length(8)->unique();
             $table->string("tempat_lahir");
             $table->string("tanggal_lahir");
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }
