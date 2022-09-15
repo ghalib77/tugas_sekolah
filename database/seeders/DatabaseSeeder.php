@@ -21,19 +21,16 @@ class DatabaseSeeder extends Seeder
         Kelas::create([
             "kelas"=>"XI-RPL 3",
             "wali_kelas"=>"Wulan",
-            "no_ruang"=>10
         ]);
 
         Kelas::create([
             "kelas"=>"XI-MM 1",
             "wali_kelas"=>"Mada",
-            "no_ruang"=>12
         ]);
 
         Kelas::create([
             "kelas"=>"XI-RPL 2",
             "wali_kelas"=>"Edi",
-            "no_ruang"=>9
         ]);
 
     }
