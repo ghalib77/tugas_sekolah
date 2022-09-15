@@ -8,6 +8,7 @@ use App\Models\Kelas;
 
 class Biodata extends Model
 {
+    use HasFactory;
     protected $table="biodata";
     protected $guarded=[
         "id"
@@ -18,17 +19,8 @@ class Biodata extends Model
         "kelas_id",
         "tanggal_lahir",
         "tempat_lahir",
-        "no_absen"
+        "email"
     ];
-    use HasFactory;
-
-    public function scopeFilter($query, array $filters)
-    {
-    $query->when($filters["search"] ?? false, function($query, $search){
-         return $query->where("nama", "like", "%" . $search . "%")
-                      ->orWhere("NIS", "like", "%" . $search . "%");
-    }); 
-    }
 
     public function kelas(){
         return $this->belongsTo(Kelas::class, "kelas_id");
