@@ -8,25 +8,18 @@ use App\Http\Controllers\BiodataController;
 
 class Kelas extends Model
 {
+    use HasFactory;
     protected $table="kelas";
     protected $guarded=[
         "id"
     ];
-    use HasFactory;
+    protected $fillable=[
+        "kelas",
+        "wali_kelas"
+    ];
     
-    public function scopeFilter($query, array $filters){
-        $query->when($filters["biodata"] ?? false, function($query, $biodata){
-            return $query->whereHas("biodata", function($query) use($biodata){
-               return $query->where("nama", "like", "%" . $biodata . "%")
-                            ->orWhere("NIS", "like", "%" . $biodata . "%");
-            });
-        });
-    }
-
     public function biodata(){
         return $this->hasMany(Biodata::class);
     }
-
-
-    }
+}
 
