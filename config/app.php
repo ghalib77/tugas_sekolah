@@ -165,7 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+            Yajra\DataTables\DataTablesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -189,7 +189,7 @@ return [
     */
 
     'aliases' => [
-
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
